@@ -1,5 +1,5 @@
 import { useState } from 'react'
-// import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import Upgrade from './components/Upgrade'
 
@@ -9,15 +9,15 @@ function App() {
 
   return (
     <>
-      <div className="header">
+      <div className="header-container">
         <h1>Samosa Selector</h1>
         <h2>Count: {count}</h2>
-        <img className="samosa" src="samosa.png" alt="" onClick={() => setCount(count+1)}/>
+        <img className="samosa" src="samosa.png" alt="" onClick={() => setCount(count+multiplier)}/>
       </div>
-      <div className="cards">
-      <Upgrade title={"Double Stuffed"} description={"2x per click"} amtNeeded={10}></Upgrade>
-      <Upgrade title={"Party Pack"} description={"5x per click"} amtNeeded={100}></Upgrade>
-      <Upgrade title={"name"} description={"10x per click"} amtNeeded={1000}></Upgrade>
+      <div className="upgrade-container">
+      <Upgrade title={"Double Stuffed"} increase={2} multiplier={multiplier} count={count} setCount={setCount} setMultiplier={setMultiplier} amtNeeded={10}></Upgrade>
+      <Upgrade title={"Party Pack"} increase={5} multiplier={multiplier} count={count} setCount={setCount} setMultiplier={setMultiplier} amtNeeded={100}></Upgrade>
+      <Upgrade title={"name"} increase={10} multiplier={multiplier} count={count} setCount={setCount} setMultiplier={setMultiplier} amtNeeded={1000}></Upgrade>
 
       </div>
     </>

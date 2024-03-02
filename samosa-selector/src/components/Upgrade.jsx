@@ -6,16 +6,18 @@ export default function Upgrade({
   setMultiplier,
   count,
   setCount,
-  current
 }) {
     function buyUpgrade(){
-        if(current < amtNeeded){
+        if(count < amtNeeded){
             return;
         }
-        setMultiplier(multiplier * increase)
-        increase = increase + multiplier
-        console.log(multiplier)
-        setCount(count - amtNeeded)
+        else{
+            setMultiplier(multiplier * increase)
+            increase = increase + multiplier
+            console.log(multiplier)
+            setCount(count - amtNeeded)
+
+        }
         
     }
   return (

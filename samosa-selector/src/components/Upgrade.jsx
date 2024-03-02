@@ -16,7 +16,6 @@ export default function Upgrade({
             increase = increase + multiplier
             console.log(multiplier)
             setCount(count - amtNeeded)
-
         }
         
     }

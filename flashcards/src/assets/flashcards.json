@@ -1,0 +1,18 @@
+[
+    {
+        "question": "Difference between EF database and actual database",
+        "answer": "EF database is a representation of the actual database, it is a snapshot of the actual database"
+    },
+    {
+        "question": "How does C# used LINQ to query the database",
+        "answer": "There are two ways: LINQ query syntax and LINQ method syntax"
+    },
+    {
+        "question": "What are all the components needed to connect to a database in ASP.NET Core",
+        "answer": "DBContext, Connection String, DBSet, Model"
+    },
+    {
+        "question": "What are the design patterns used in ASP.NET Core",
+        "answer": "Code-first, DB-first, and Model-first"
+    }
+]

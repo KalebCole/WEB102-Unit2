@@ -29,12 +29,16 @@ function App() {
         <h2>How much do you know about ASP.NET and Web Development??</h2>
         <h3>Number of Cards: {flashcards.length}</h3>
       </header>
-      <div className="Card-container">
+      {/* this should pass in the QA, and then when i click on the card, it will update the state to show the question/answer */}
+      {/* it is currently not doing this, instead it is updating QA when I click on the buttons below */}
+        
         <Card
           question={flashcards[currentIndex].question}
-          answer={flashcards[currentIndex.answer]}
-        ></Card>
-      </div>
+          answer={flashcards[currentIndex].answer}
+          QA = {QA}
+          setQA = {setQA}
+        />
+
       <div className="Button-container">
         <button className="backBtn" onClick={goBackValidation}></button>
         <button className="forwardBtn" onClick={goForwardValidation}></button>

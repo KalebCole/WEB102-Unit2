@@ -3,6 +3,12 @@ import "./App.css";
 import Card from "./components/Card";
 import flashcards from "./assets/flashcards.json";
 import start from "./assets/start.json";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [QA, setQA] = useState(0);
@@ -30,32 +36,59 @@ function App() {
   };
   return (
     <>
-      <header className="App-header">
-        <h1>ISYS366: E-Commerce Midterm Study Guide</h1>
-        <h2>How much do you know about ASP.NET and Web Development??</h2>
-        <h3>Number of Cards: {flashcards.length}</h3>
-      </header>
+      <Container fluid className="background-container"> 
+        <Row className="App-header mt-5 mb-4">
+          <h1>ISYS366: E-Commerce Midterm Study Guide</h1>
+        </Row>
+        <Row>
+          <h2>How much do you know about ASP.NET and Web Development??</h2>
+          <h3>Number of Cards: {flashcards.length}</h3>
+        </Row>
 
-      {showStartCard === false ? (
-        <Card
-          question={flashcards[currentIndex].question}
-          answer={flashcards[currentIndex].answer}
-          QA={QA}
-          setQA={setQA}
-        />
-      ) : (
-        <Card
-          question={start.question}
-          answer={start.answer}
-          QA={QA}
-          setQA={setQA}
-        />
-      )}
+        <Row className="mt-4 mb-4">
+          <Col></Col>
+          <Col>
+            {showStartCard === false ? (
+              <Card
+                question={flashcards[currentIndex].question}
+                answer={flashcards[currentIndex].answer}
+                QA={QA}
+                setQA={setQA}
+              />
+            ) : (
+              <Card
+                question={start.question}
+                answer={start.answer}
+                QA={QA}
+                setQA={setQA}
+              />
+            )}
+          </Col>
+          <Col></Col>
+        </Row>
 
-      <div className="Button-container">
-        <button className="backBtn" onClick={goBackValidation}></button>
-        <button className="forwardBtn" onClick={() => {goForwardValidation(); startFlashcards();}}></button>
-      </div>
+        <Row>
+          <Col className="Button-container">
+            <Button
+              className="backBtn"
+              variant="outline-dark"
+              onClick={goBackValidation}
+            >
+              <i className="bi bi-arrow-left"></i>
+            </Button>
+            <Button
+              className="forwardBtn"
+              variant="outline-dark"
+              onClick={() => {
+                goForwardValidation();
+                startFlashcards();
+              }}
+            >
+              <i className="bi bi-arrow-right"></i>
+            </Button>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 }

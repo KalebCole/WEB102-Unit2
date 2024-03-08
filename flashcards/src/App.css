@@ -48,18 +48,26 @@
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
 
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-  background-color: white;
-  color: black;
-}
-
-/* Style the back side */
-.flip-card-back {
-  background-color: white;
-  color: black;
+.flip-card.clicked .flip-card-back {
   transform: rotateX(180deg);
 }
 /* End of Flip Card Section */
+.easy{
+  background-color: rgb(145, 226, 145);
+  color: black;
+}
+
+.medium {
+  background-color: rgb(240, 240, 116);
+  color: black;
+}
+.hard {
+  background-color: rgb(253, 101, 101);
+  color: black;
+}

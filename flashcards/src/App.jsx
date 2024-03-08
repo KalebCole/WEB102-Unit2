@@ -29,6 +29,7 @@ function App() {
     } while (randomIndex === currentIndex);
     setPreviousIndex(currentIndex);
     setCurrentIndex(randomIndex);
+    setQA(0); // Reset to question side
   };
 
   const startFlashcards = () => {
@@ -41,8 +42,8 @@ function App() {
           <h1>ISYS366: E-Commerce Midterm Study Guide</h1>
         </Row>
         <Row>
-          <h2>How much do you know about ASP.NET and Web Development??</h2>
-          <h3>Number of Cards: {flashcards.length}</h3>
+          <h4>How much do you know about ASP.NET and Web Development??</h4>
+          <h5>Number of Cards: {flashcards.length}</h5>
         </Row>
 
         <Row className="mt-4 mb-4">
@@ -52,6 +53,7 @@ function App() {
               <Card
                 question={flashcards[currentIndex].question}
                 answer={flashcards[currentIndex].answer}
+                difficulty={flashcards[currentIndex].difficulty}
                 QA={QA}
                 setQA={setQA}
               />
